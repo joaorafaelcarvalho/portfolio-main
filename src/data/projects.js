@@ -58,11 +58,11 @@ const projects = [
       "Este trabalho permitiu aprofundar conhecimentos em design de sistemas interativos e explorar novas possibilidades de aplicação da Inteligência Artificial generativa na educação, procurando desenvolver uma solução que promova a eficiência na criação de conteúdos e contribua para uma experiência de aprendizagem mais envolvente e personalizada."
     ],
     images: [
-      { src: "dist/quiz-1.JPG" },
-      { src: "dist/quiz-2.JPG" },
-      { src: "dist/quiz-3.JPG" },
-      { src: "dist/quiz-4.JPG" },
-      { src: "dist/quiz-5.JPG" }
+      { src: "/quiz-1.JPG" },
+      { src: "/quiz-2.JPG" },
+      { src: "/quiz-3.JPG" },
+      { src: "/quiz-4.JPG" },
+      { src: "/quiz-5.JPG" }
     ],
     repoUrl: null,
     liveUrl: null
@@ -80,30 +80,84 @@ const projects = [
 "Ao longo do projeto, foram desenvolvidas competências de programação, análise e resolução de problemas, bem como funcionalidades de pesquisa, gestão de dados e importação e exportação da base de dados. Este trabalho permitiu consolidar conhecimentos na área do desenvolvimento web e da gestão de bases de dados, aplicando conceitos teóricos na construção de uma solução funcional."
 ],
     images: [
-      { src: "dist/felix-1.JPG" },
-      { src: "dist/felix-2.JPG" },
-      { src: "dist/felix-3.JPG" },
-      { src: "dist/felix-4.JPG" },
-      { src: "dist/felix-5.JPG" }
+      { src: "/felix-1.JPG" },
+      { src: "/felix-2.JPG" },
+      { src: "/felix-3.JPG" },
+      { src: "/felix-4.JPG" },
+      { src: "/felix-5.JPG" }
     ],
     repoUrl: null,
     liveUrl: null
   },
     {
-    id: "portal-gestao-ae",
-    title: "Plataforma de Gestão e Serviços AE ESTCB",
-    category: "Engenharia de Software & Web",
-    institution: "AE ESTCB",
-    shortDescription: "Sistema web desenvolvido para gestão de iniciativas académicas, apoio aos estudantes e organização de recursos da Associação.",
-    stack: ["React", "Node.js", "MySQL", "Tailwind CSS"],
+    id: "Pona",
+    title: "Pona - Public Opinion News Agency",
+    category: "Web",
+    institution: "ESTCB / IPCB",
+    shortDescription: "Plataforma idealizada para disponibilizar notícias mais recentes a um público alargado, proporcionando uma experiência de navegação intuitiva e acessível.",
+    stack: ["JavaScript", "HTML", "Bootstrap", "CSS"],
     featured: true,
     description: [
-      "Desenvolvido para modernizar os processos internos e o atendimento ao estudante na Associação de Estudantes da ESTCB, o sistema integra módulos de gestão de iniciativas, controlo de recursos e comunicação direta com a comunidade académica.",
-      "O projeto aliou a experiência prática de sete anos em dirigismo associativo com a arquitetura de software moderno, permitindo automatizar tarefas administrativas e assegurar um canal digital fiável e acessível a todos os estudantes.",
-      "Implementou funcionalidades de base de dados relacional (MySQL), API em Node.js e interface reativa e intuitiva em React, otimizando o fluxo de trabalho da direção e dos colaboradores da associação."
+      "Este projeto consistiu na conceção e desenvolvimento de um protótipo de um website de notícias, denominado Pona (Public Opinion News Agency), no âmbito da Unidade Curricular de Multimédia I. A plataforma foi idealizada para disponibilizar as notícias mais recentes a um público alargado, proporcionando uma experiência de navegação intuitiva e acessível.",
+      "O trabalho envolveu a definição da estrutura e do design do website, a identificação do público-alvo e a elaboração de funcionalidades adequadas às necessidades dos utilizadores. Foi também desenvolvido um relatório técnico que documenta as decisões tomadas ao longo do projeto, incluindo a análise de usabilidade, a organização dos conteúdos e a apresentação da proposta ao cliente.",
+      "Este projeto permitiu aplicar e consolidar conhecimentos na área do design e desenvolvimento de interfaces web, reforçando competências de planeamento, prototipagem e conceção de soluções digitais centradas no utilizador."
     ],
     images: [
-
+      { src: "/pona-1.JPG" },
+      { src: "/pona-2.JPG" },
+      { src: "/pona-3.JPG" },
+      { src: "/pona-4.JPG" },
+      { src: "/pona-5.JPG" }
+    ],
+    repoUrl: null,
+    liveUrl: null
+  },
+{
+    id: "Barbearia",
+    title: "Barbearia Premiun",
+    category: "Web / Cordova",
+    institution: "ESTCB / IPCB",
+    shortDescription: "Plataforma idealizada com o objetivo de facilitar a divulgação dos serviços disponibilizados e simplificar o processo de marcação de cortes de cabelo e barba. A plataforma foi pensada para proporcionar aos clientes uma experiência de navegação intuitiva e acessível, permitindo consultar os serviços disponíveis e efetuar marcações de forma prática.",
+    stack: ["JavaScript", "HTML", "CSS"],
+    featured: true,
+    description: [
+      "Este projeto consistiu na conceção e desenvolvimento de um website para uma barbearia, com o objetivo de facilitar a divulgação dos serviços disponibilizados e simplificar o processo de marcação de cortes de cabelo e barba. A plataforma foi pensada para proporcionar aos clientes uma experiência de navegação intuitiva e acessível, permitindo consultar os serviços disponíveis e efetuar marcações de forma prática.",
+      "O desenvolvimento do projeto envolveu a definição da estrutura e do design da interface, tendo em consideração a identidade visual da barbearia e as necessidades dos seus clientes. A implementação das funcionalidades de marcação pretende otimizar a gestão dos agendamentos, melhorar a organização dos serviços e tornar a interação entre a barbearia e os seus clientes mais eficiente.",
+      "Este trabalho permitiu aplicar conhecimentos na área do design e desenvolvimento web, reforçando competências de planeamento, conceção de interfaces e desenvolvimento de soluções digitais orientadas para as necessidades dos utilizadores."
+    ],
+    images: [
+      { src: "/barbearia-1.JPG" },
+      { src: "/barbearia-2.JPG" },
+      { src: "/barbearia-3.JPG" },
+      { src: "/barbearia-4.JPG" },
+      { src: "/barbearia-5.JPG" }
+    ],
+    repoUrl: null,
+    liveUrl: null
+  }
+,
+{
+    id: "Museu",
+    title: "Museu de História Natural Dr. Félix José da Silva — Plataforma de Catalogação e Gestão de Acervo",
+    category: "Web / Base de Dados",
+    institution: "ESTCB / IPCB / Museu de História Natural Dr. Félix José da Silva / Agrupamento Escolas Nuno Alvares",
+    shortDescription: "Desenvolvimento de uma plataforma web para catalogação e gestão interna do acervo do Museu de História Natural Dr. Félix José da Silva, com funcionalidades de gestão de registos, controlo de acessos, recuperação de dados e exportação de informação, utilizando Node.js, Express, React e Tailwind CSS.",
+    stack: ["Node.js", "Express", "Multer","innoBD","React","vite", "Tailwind CSS"],
+    featured: true,
+    description: [
+      "Este projeto consistiu na conceção e desenvolvimento de uma plataforma web para a catalogação e gestão do acervo do Museu de História Natural Dr. Félix José da Silva, com o objetivo de modernizar os processos de gestão interna e melhorar a organização, a integridade e a preservação da informação associada às coleções do museu.",
+      "A solução desenvolvida integra uma base de dados relacional estruturada, um sistema de gestão administrativa e funcionalidades avançadas de catalogação, edição e organização de registos e ativos multimédia. Foram também implementados mecanismos de controlo de acessos baseado em papéis, recuperação de informação através de cópias de segurança versionadas e exportação de dados em formatos como JSON, XML e CSV.",
+      "Recorrendo a tecnologias como Node.js, Express, React e Tailwind CSS, o projeto permitiu aplicar conhecimentos de desenvolvimento web, arquitetura de software e gestão de bases de dados na criação de uma solução adaptada às necessidades da instituição. O resultado é uma plataforma orientada para a gestão interna, que promove a eficiência dos processos, a segurança dos dados e a preservação a longo prazo da informação do acervo."
+    ],
+    images: [
+      { src: "/museu-1.png" },
+      { src: "/museu-2.png" },
+      { src: "/museu-3.png" },
+      { src: "/museu-4.png" },
+      { src: "/museu-5.png" },
+      { src: "/museu-6.png" },
+      { src: "/museu-7.png" },
+      { src: "/museu-8.png" }
     ],
     repoUrl: null,
     liveUrl: null

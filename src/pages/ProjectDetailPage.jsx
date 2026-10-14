@@ -19,7 +19,7 @@ function ProjectDetailPage() {
           <p className="text-slate-400">O projeto solicitado não existe ou foi movido.</p>
           <Link 
             to="/projetos" 
-            className="text-emerald-400 hover:underline text-sm font-mono"
+            className="text-grey-400 hover:underline text-sm font-mono"
           >
             &larr; Voltar à lista de projetos
           </Link>
@@ -41,9 +41,7 @@ function ProjectDetailPage() {
             <span>&larr;</span>
             <span>Voltar a Todos os Projetos</span>
           </Link>
-          <span className="text-slate-400 bg-slate-900/80 px-3 py-1 rounded-full border border-slate-800">
-            {project.category}
-          </span>
+          
         </div>
 
         {/* Cabeçalho do Projeto com amplitude total */}
@@ -73,7 +71,7 @@ function ProjectDetailPage() {
               {project.stack.map((tech) => (
                 <span
                   key={tech}
-                  className="bg-emerald-950/40 text-emerald-300 border border-emerald-500/30 px-3 py-1 rounded-lg text-xs font-mono"
+                  className="bg-GREY-950/40 text-grey-300 border border-grey-500/30 px-3 py-1 rounded-lg text-xs font-mono"
                 >
                   {tech}
                 </span>
@@ -88,7 +86,7 @@ function ProjectDetailPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm py-2.5 px-5 rounded-xl transition-all shadow-[0_0_15px_rgba(16,185,129,0.3)]"
                 >
-                  <span>Aceder ao Projeto Online</span>
+                  <span>Pagina Web</span>
                   <span>&rarr;</span>
                 </a>
               )}
@@ -108,9 +106,7 @@ function ProjectDetailPage() {
 
         {/* Descrição Detalhada em bloco amplo */}
         <section className="bg-[#080d15]/85 border border-emerald-500/25 rounded-2xl p-6 sm:p-8 backdrop-blur-sm space-y-4 text-slate-300 leading-relaxed text-base">
-          <h2 className="text-xs font-mono text-emerald-400 uppercase tracking-wider border-b border-slate-800 pb-2.5 font-semibold">
-            Especificações &amp; Arquitetura do Projeto
-          </h2>
+
           {project.description.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
@@ -121,20 +117,20 @@ function ProjectDetailPage() {
           <section className="space-y-6">
             <div className="border-b border-emerald-500/20 pb-3 flex items-center justify-between">
               <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                Capturas e Demonstração Visual
+                Capturas 
               </h2>
-              <span className="text-xs font-mono text-slate-400">
-                {project.images.length} {project.images.length === 1 ? 'registo' : 'registos'}
-              </span>
+
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {project.images.map((image, index) => (
                 <div 
                   key={index} 
-                  className={`border border-emerald-500/25 bg-[#080d15]/85 p-3 rounded-2xl backdrop-blur-sm ${
-                    index === 0 && project.images.length % 2 !== 0 ? 'md:col-span-2' : ''
-                  }`}
+                  className={`
+                    block aspect-video w-full rounded-xl overflow-hidden bg-black/60 border border-emerald-200/20 ${
+                      index === 0 && project.images.length % 2 !== 0 ? 'md:col-span-2' : ''
+                    }
+                  `}
                 >
                   <div className="overflow-hidden bg-slate-950 rounded-xl">
                     <img

@@ -38,7 +38,7 @@ function SobrePage() {
           <div className="flex items-center gap-3">
             <a
               href="/curriculo.pdf"
-              download="João_Carvalho_Curriculo.pdf"
+              download="Joao-Carvalho-CV.pdf"
               className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-2.5 px-4 rounded-xl text-sm transition-colors"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -55,7 +55,7 @@ function SobrePage() {
             
             {/* Foto de perfil reduzida em 50% com bordas arredondadas */}
             <div className="shrink-0 flex flex-col items-center">
-              <div className="w-40 h-40 sm:w-44 sm:h-44 rounded-3xl overflow-hidden border-2 border-emerald-500/40 bg-slate-950">
+              <div className="w-50 h-50 sm:w-70 sm:h-70 rounded-3xl overflow-hidden bg-slate-950">
                 <img
                   src="/foto-perfil.png"
                   alt="João Rafael Andrade de Carvalho"
@@ -63,21 +63,6 @@ function SobrePage() {
                 />
               </div>
 
-              {/* Informações pontuais sem associativismo e sem disponibilidade */}
-              <div className="mt-4 w-full space-y-2 text-xs border-t border-slate-800/80 pt-3">
-                <div className="flex flex-col gap-0.5">
-                  <span className="text-slate-400">Situação:</span>
-                  <span className="text-emerald-400 font-semibold">Último Ano de Licenciatura</span>
-                </div>
-                <div className="flex flex-col gap-0.5">
-                  <span className="text-slate-400">Instituição:</span>
-                  <span className="text-slate-200">ESTCB &bull; Politécnico de Castelo Branco</span>
-                </div>
-                <div className="flex flex-col gap-0.5">
-                  <span className="text-slate-400">Estatuto:</span>
-                  <span className="text-slate-200">Trabalhador-Estudante</span>
-                </div>
-              </div>
             </div>
 
             {/* Texto de Apresentação sem 'Apresentação & Percurso' e sem barra lateral verde */}
@@ -104,9 +89,9 @@ function SobrePage() {
         <section className="bg-[#080d15]/85 border border-emerald-500/25 rounded-2xl p-6 sm:p-8 backdrop-blur-sm space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
             <h2 className="text-xl sm:text-2xl font-bold text-white">
-              Associação de Estudantes da ESTCB &mdash; 7 Anos de Liderança
+              Associação de Estudantes da ESTCB
             </h2>
-            <span className="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-md border border-emerald-500/20">
+            <span className="text-xs font-mono text-grey-400 bg-grey-500/10 px-3 py-1 rounded-md border border-grey-500/20">
               2019 &ndash; 2026
             </span>
           </div>
@@ -121,52 +106,11 @@ function SobrePage() {
               </p>
             </div>
 
-            <div className="md:col-span-4 flex flex-col items-center">
-              <div className="border border-emerald-500/30 rounded-2xl overflow-hidden bg-black/60 p-2.5 max-w-[200px]">
-                <img
-                  src="/certificado-estcb.jpg"
-                  alt="Certificado de Dirigismo Associativo da Associação de Estudantes da ESTCB"
-                  className="w-full h-auto object-contain rounded-xl"
+            <div className="md:col-span-3 flex flex-col items-center gap-4">
+                        <img src="/certificado-estcb.jpg" className="w-3/4 h-auto object-contain rounded-xl"
                 />
-                <p className="text-[11px] text-slate-400 text-center mt-2 font-mono">
-                  Certificado de Funções &bull; AE ESTCB
-                </p>
-              </div>
+              
             </div>
-          </div>
-        </section>
-
-        {/* 3. Secção de Competências integrada no Sobre */}
-        <section className="space-y-6 pt-4">
-          <div className="border-b border-emerald-500/20 pb-4">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Competências &amp; Ferramentas
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-            {skillCategories.map((cat) => (
-              <div
-                key={cat.title}
-                className="bg-[#080d15]/85 border border-emerald-500/25 rounded-2xl p-5 backdrop-blur-sm space-y-3 flex flex-col justify-between"
-              >
-                <div>
-                  <h3 className="text-sm font-semibold text-white tracking-wide uppercase font-mono pb-2 border-b border-slate-800">
-                    {cat.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-1.5 pt-3">
-                    {cat.skills.map((s) => (
-                      <span
-                        key={s}
-                        className="bg-emerald-950/30 text-emerald-300 border border-emerald-500/25 px-2.5 py-1 rounded-lg text-xs font-mono"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </section>
 

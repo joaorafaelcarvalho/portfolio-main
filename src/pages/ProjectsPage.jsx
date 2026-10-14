@@ -36,34 +36,38 @@ function ProjectsPage() {
         {/* Cabeçalho da Página em formato amplo */}
         <div className="border-b border-emerald-500/20 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-              <span>PORTFÓLIO COMPLETO &bull; {projects.length} PROJETOS REGISTADOS</span>
-            </div>
             <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
               Todos os Projetos
             </h1>
-            <p className="text-slate-300 max-w-2xl text-base">
-              Aplicações, sistemas e videojogos desenvolvidos com foco em arquitetura de código, interatividade e integração de novas tecnologias.
-            </p>
-          </div>
-
-          {/* Filtros rápidos por categoria */}
-          <div className="flex flex-wrap gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-mono transition-all ${
-                  selectedCategory === cat
-                    ? 'bg-emerald-600 text-white font-semibold shadow-[0_0_12px_rgba(16,185,129,0.3)]'
-                    : 'bg-slate-900/80 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
           </div>
         </div>
+
+         {/* Secção de Competências associada aos Projetos (como solicitado no prompt) */}
+        <section className="bg-[#080d15]/85 border border-emerald-500/25 rounded-2xl p-6 sm:p-8 backdrop-blur-sm space-y-6">
+          <div className="border-b border-slate-800 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h2 className="text-xl sm:text-2xl font-bold text-white mt-1">
+                Linguagens e Ferramentas usadas em Projetos
+              </h2>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
+            {techStack.map((item) => (
+              <div
+                key={item.name}
+                className="bg-slate-900/80 border border-emerald-500/20 hover:border-emerald-500/50 p-3 rounded-xl transition-all flex flex-col justify-between"
+              >
+                <span className="text-xs font-mono text-emerald-400 font-medium">
+                  {item.category}
+                </span>
+                <span className="text-sm font-bold text-white mt-2">
+                  {item.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* Grelha de Projetos ocupando toda a largura */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -121,67 +125,8 @@ function ProjectsPage() {
                   ))}
                 </div>
               </div>
-
-              {/* Ações inferiores */}
-              <div className="pt-6 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-medium">
-                <Link
-                  to={`/projeto/${project.id}`}
-                  className="text-emerald-400 hover:text-emerald-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform"
-                >
-                  <span>Ver especificações completas</span>
-                  <span>&rarr;</span>
-                </Link>
-
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-200 hover:text-white inline-flex items-center gap-1 bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-700/80"
-                  >
-                    <span>Testar Online</span>
-                  </a>
-                )}
-              </div>
             </article>
           ))}
-        </section>
-
-        {/* Secção de Competências associada aos Projetos (como solicitado no prompt) */}
-        <section className="bg-[#080d15]/85 border border-emerald-500/25 rounded-2xl p-6 sm:p-8 backdrop-blur-sm space-y-6">
-          <div className="border-b border-slate-800 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-            <div>
-              <span className="text-xs font-mono text-emerald-400 uppercase tracking-wider block font-semibold">
-                Competências Técnicas Aplicadas
-              </span>
-              <h2 className="text-xl sm:text-2xl font-bold text-white mt-1">
-                Linguagens e Ferramentas Empregadas nestes Projetos
-              </h2>
-            </div>
-            <Link
-              to="/sobre"
-              className="text-xs font-mono text-emerald-400 hover:underline inline-flex items-center gap-1"
-            >
-              <span>Ver todas as competências no perfil</span>
-              <span>&rarr;</span>
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
-            {techStack.map((item) => (
-              <div
-                key={item.name}
-                className="bg-slate-900/80 border border-emerald-500/20 hover:border-emerald-500/50 p-3 rounded-xl transition-all flex flex-col justify-between"
-              >
-                <span className="text-xs font-mono text-emerald-400 font-medium">
-                  {item.category}
-                </span>
-                <span className="text-sm font-bold text-white mt-2">
-                  {item.name}
-                </span>
-              </div>
-            ))}
-          </div>
         </section>
 
       </div>
