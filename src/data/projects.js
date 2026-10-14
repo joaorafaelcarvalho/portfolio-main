@@ -2,8 +2,8 @@ const projects = [
   {
     id: "kombat-ia",
     title: "Kombat IA",
-    category: "Videojogos & IA Generativa",
-    institution: "IPCB",
+    category: "IA Generativa",
+    institution: "ESTCB / IPCB",
     shortDescription: "Jogo de luta interativo que explora a integração de IA generativa no processo de criação de software, mecânicas de combate e engenharia de prompts.",
     stack: ["JavaScript", "IA Generativa", "Prompt Engineering", "Web"],
     featured: true,
@@ -12,11 +12,11 @@ const projects = [
       "Ao longo do projeto, foram trabalhadas linguagens e tecnologias de programação para estruturar o funcionamento do jogo, implementar as suas funcionalidades e desenvolver uma experiência interativa e funcional. Este trabalho permitiu consolidar competências em programação, desenvolvimento de aplicações multimédia e utilização de ferramentas de IA generativa."
     ],
     images: [
-      { src: "/kombat-ia-1.png", alt: "Kombat IA - Ecrã Inicial e Menu Neural Arena" },
-      { src: "/kombat-ia-2.png", alt: "Kombat IA - Seleção de Personagens (Protocolo Neural Link)" },
-      { src: "/kombat-ia-3.png", alt: "Kombat IA - Arena de Combate em Tempo Real" },
-      { src: "/kombat-ia-4.png", alt: "Kombat IA - Ecrã de Vitória e Estatísticas" },
-      { src: "/kombat-ia-5.png", alt: "Kombat IA - Base de Dados de Guerreiros e Lore" }
+      { src: "/kombat-ia-1.png" },
+      { src: "/kombat-ia-2.png"},
+      { src: "/kombat-ia-3.png" },
+      { src: "/kombat-ia-4.png" },
+      { src: "/kombat-ia-5.png" }
     ],
     repoUrl: null,
     liveUrl: "https://kombatia.vercel.app/"
@@ -24,9 +24,9 @@ const projects = [
   {
     id: "alien-invasion",
     title: "Alien Invasion",
-    category: "Computação Gráfica & Videojogos",
+    category: "Computação Gráfica",
     institution: "ESTCB / IPCB",
-    shortDescription: "Videojogo 2D desenvolvido em C++ com OpenGL e FreeGLUT, com mecânicas dinâmicas de combate espacial e rotação 360°.",
+    shortDescription: "Jogo 2D desenvolvido em C++ com OpenGL e FreeGLUT, com mecânicas dinâmicas de combate espacial e rotação 360°.",
     stack: ["C++", "OpenGL", "FreeGLUT"],
     featured: true,
     description: [
@@ -37,8 +37,8 @@ const projects = [
       "O Alien Invasion representou uma oportunidade para aprofundar competências em C++, OpenGL e modelação matemática aplicada à computação gráfica, aliando a criatividade à resolução de desafios técnicos no desenvolvimento de um videojogo interativo."
     ],
     images: [
-      { src: "/alien-invasion-1.png", alt: "Alien Invasion - Gameplay em Combate Espacial" },
-      { src: "/alien-invasion-2.png", alt: "Alien Invasion - Menu e Ecrã de Pausa" }
+      { src: "/alien-invasion-1.png" },
+      { src: "/alien-invasion-2.png" }
     ],
     repoUrl: null,
     liveUrl: null
@@ -46,7 +46,7 @@ const projects = [
   {
     id: "sigrae",
     title: "Sistema Interativo para Geração de Recursos e Avaliação Educativa",
-    category: "IA Generativa & Design Interativo",
+    category: "IA Generativa",
     institution: "ESTCB / IPCB",
     shortDescription: "Sistema interativo que integra IA generativa no contexto educativo para apoiar a criação de recursos pedagógicos e processos de avaliação.",
     stack: ["Python", "JavaScript", "CSS"],
@@ -57,7 +57,54 @@ const projects = [
       "Ao longo do desenvolvimento, foram considerados aspetos relacionados com a interação entre o utilizador e o sistema, a usabilidade e a aplicação da IA como ferramenta de apoio ao trabalho docente.",
       "Este trabalho permitiu aprofundar conhecimentos em design de sistemas interativos e explorar novas possibilidades de aplicação da Inteligência Artificial generativa na educação, procurando desenvolver uma solução que promova a eficiência na criação de conteúdos e contribua para uma experiência de aprendizagem mais envolvente e personalizada."
     ],
-    images: [],
+    images: [
+      { src: "dist/quiz-1.JPG" },
+      { src: "dist/quiz-2.JPG" },
+      { src: "dist/quiz-3.JPG" },
+      { src: "dist/quiz-4.JPG" },
+      { src: "dist/quiz-5.JPG" }
+    ],
+    repoUrl: null,
+    liveUrl: null
+  },
+  {
+    id: "Felixbus",
+    title: "Felixbus",
+    category: "Base de dados/ Web",
+    institution: "ESTCB / IPCB",
+    shortDescription: "Sistema web desenvolvido para gestão/compra  de bilhetes de transporte rodoviário, com integração de base de dados relacional e funcionalidades de pesquisa e gestão de dados.",
+    stack: ["PHP", "MySQL", "CSS", "HTML"],
+    featured: true,
+    description: [
+  "Este projeto consistiu no desenvolvimento de uma aplicação web destinada à gestão de um website para uma empresa de transportes rodoviários de passageiros, recorrendo às tecnologias PHP e SQL. O trabalho teve como principal objetivo implementar funcionalidades que permitissem gerir e organizar a informação de forma eficiente, através da integração de uma base de dados.",      
+"Ao longo do projeto, foram desenvolvidas competências de programação, análise e resolução de problemas, bem como funcionalidades de pesquisa, gestão de dados e importação e exportação da base de dados. Este trabalho permitiu consolidar conhecimentos na área do desenvolvimento web e da gestão de bases de dados, aplicando conceitos teóricos na construção de uma solução funcional."
+],
+    images: [
+      { src: "dist/felix-1.JPG" },
+      { src: "dist/felix-2.JPG" },
+      { src: "dist/felix-3.JPG" },
+      { src: "dist/felix-4.JPG" },
+      { src: "dist/felix-5.JPG" }
+    ],
+    repoUrl: null,
+    liveUrl: null
+  },
+    {
+    id: "portal-gestao-ae",
+    title: "Plataforma de Gestão e Serviços AE ESTCB",
+    category: "Engenharia de Software & Web",
+    institution: "AE ESTCB",
+    shortDescription: "Sistema web desenvolvido para gestão de iniciativas académicas, apoio aos estudantes e organização de recursos da Associação.",
+    stack: ["React", "Node.js", "MySQL", "Tailwind CSS"],
+    featured: true,
+    description: [
+      "Desenvolvido para modernizar os processos internos e o atendimento ao estudante na Associação de Estudantes da ESTCB, o sistema integra módulos de gestão de iniciativas, controlo de recursos e comunicação direta com a comunidade académica.",
+      "O projeto aliou a experiência prática de sete anos em dirigismo associativo com a arquitetura de software moderno, permitindo automatizar tarefas administrativas e assegurar um canal digital fiável e acessível a todos os estudantes.",
+      "Implementou funcionalidades de base de dados relacional (MySQL), API em Node.js e interface reativa e intuitiva em React, otimizando o fluxo de trabalho da direção e dos colaboradores da associação."
+    ],
+    images: [
+
+    ],
     repoUrl: null,
     liveUrl: null
   }

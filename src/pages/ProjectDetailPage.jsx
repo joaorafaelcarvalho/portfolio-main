@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import projects from '../data/projects';
+import Layout from '../components/Layout';
 
 function ProjectDetailPage() {
   const { id } = useParams();
@@ -12,127 +13,137 @@ function ProjectDetailPage() {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-[#0d1117] text-slate-200 flex flex-col items-center justify-center px-6">
-        <h1 className="text-2xl font-bold mb-3 text-white">Projeto não encontrado</h1>
-        <Link 
-          to="/" 
-          className="text-sm text-blue-400 hover:underline"
-        >
-          &larr; Voltar ao Portfólio
-        </Link>
-      </div>
+      <Layout>
+        <div className="w-full min-h-[50vh] flex flex-col items-center justify-center text-center space-y-4">
+          <h1 className="text-3xl font-bold text-white">Projeto não encontrado</h1>
+          <p className="text-slate-400">O projeto solicitado não existe ou foi movido.</p>
+          <Link 
+            to="/projetos" 
+            className="text-emerald-400 hover:underline text-sm font-mono"
+          >
+            &larr; Voltar à lista de projetos
+          </Link>
+        </div>
+      </Layout>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#0d1117] text-slate-200">
-      {/* Navbar Clássica */}
-      <header className="sticky top-0 z-40 bg-[#161b22] border-b border-slate-800">
-        <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link 
-            to="/" 
-            className="text-sm font-medium text-slate-300 hover:text-white transition-colors flex items-center gap-2"
+    <Layout>
+      <div className="w-full space-y-10">
+        
+        {/* Navegação Superior & Categoria */}
+        <div className="flex items-center justify-between border-b border-emerald-500/20 pb-4 text-xs font-mono">
+          <Link
+            to="/projetos"
+            className="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5 font-semibold"
           >
             <span>&larr;</span>
-            <span>Voltar ao Portfólio</span>
+            <span>Voltar a Todos os Projetos</span>
           </Link>
-
-          <span className="text-xs font-mono text-slate-400">
+          <span className="text-slate-400 bg-slate-900/80 px-3 py-1 rounded-full border border-slate-800">
             {project.category}
           </span>
         </div>
-      </header>
 
-      {/* Conteúdo Principal */}
-      <main className="max-w-4xl mx-auto px-6 py-12 space-y-10">
-        {/* Cabeçalho do Projeto */}
-        <section className="border-b border-slate-800 pb-8 space-y-4">
-          <div className="flex flex-wrap items-center gap-3 text-xs">
-            <span className="text-slate-400 font-medium">
-              {project.category}
-            </span>
+        {/* Cabeçalho do Projeto com amplitude total */}
+        <section className="space-y-4">
+          <div className="flex flex-wrap items-center gap-3 text-xs font-mono">
+            <span className="text-emerald-400 font-semibold">{project.category}</span>
             {project.institution && (
               <>
                 <span className="text-slate-600">&bull;</span>
                 <span className="text-slate-300">
-                  Trabalho realizado para: <strong className="text-white">{project.institution}</strong>
+                  Instituição: <strong className="text-white">{project.institution}</strong>
                 </span>
               </>
             )}
           </div>
 
-          <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             {project.title}
           </h1>
 
-          <p className="text-base text-slate-300 leading-relaxed max-w-3xl">
+          <p className="text-base sm:text-xl text-slate-300 max-w-4xl leading-relaxed">
             {project.shortDescription}
           </p>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
-            <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-3">
+            <div className="flex flex-wrap gap-2">
               {project.stack.map((tech) => (
                 <span
                   key={tech}
-                  className="bg-[#21262d] text-slate-300 border border-slate-700/80 px-2.5 py-1 rounded text-xs font-mono"
+                  className="bg-emerald-950/40 text-emerald-300 border border-emerald-500/30 px-3 py-1 rounded-lg text-xs font-mono"
                 >
                   {tech}
                 </span>
               ))}
             </div>
 
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm py-2 px-4 rounded transition-colors"
-              >
-                <span>Jogar / Aceder ao Projeto Online</span>
-                <span>&rarr;</span>
-              </a>
-            )}
+            <div className="flex items-center gap-3">
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm py-2.5 px-5 rounded-xl transition-all shadow-[0_0_15px_rgba(16,185,129,0.3)]"
+                >
+                  <span>Aceder ao Projeto Online</span>
+                  <span>&rarr;</span>
+                </a>
+              )}
+              {project.repoUrl && (
+                <a
+                  href={project.repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700 text-sm py-2.5 px-4 rounded-xl transition-colors"
+                >
+                  <span>Ver no GitHub</span>
+                </a>
+              )}
+            </div>
           </div>
         </section>
 
-        {/* Descrição Detalhada */}
-        <section className="bg-[#161b22] border border-slate-800 rounded-md p-6 sm:p-8 space-y-4 text-slate-300 leading-relaxed text-sm sm:text-base text-justify">
-          <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wide border-b border-slate-800 pb-2">
-            Descrição do Projeto
+        {/* Descrição Detalhada em bloco amplo */}
+        <section className="bg-[#080d15]/85 border border-emerald-500/25 rounded-2xl p-6 sm:p-8 backdrop-blur-sm space-y-4 text-slate-300 leading-relaxed text-base">
+          <h2 className="text-xs font-mono text-emerald-400 uppercase tracking-wider border-b border-slate-800 pb-2.5 font-semibold">
+            Especificações &amp; Arquitetura do Projeto
           </h2>
           {project.description.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
         </section>
 
-        {/* Galeria de Capturas */}
+        {/* Galeria de Capturas se existir */}
         {project.images && project.images.length > 0 && (
-          <section className="space-y-4">
-            <div className="border-b border-slate-800 pb-2 flex items-center justify-between">
-              <h2 className="text-lg font-bold text-white">
-                Capturas do Projeto
+          <section className="space-y-6">
+            <div className="border-b border-emerald-500/20 pb-3 flex items-center justify-between">
+              <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                Capturas e Demonstração Visual
               </h2>
-              <span className="text-xs text-slate-400">
-                {project.images.length} {project.images.length === 1 ? 'imagem' : 'imagens'}
+              <span className="text-xs font-mono text-slate-400">
+                {project.images.length} {project.images.length === 1 ? 'registo' : 'registos'}
               </span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {project.images.map((image, index) => (
                 <div 
                   key={index} 
-                  className={`border border-slate-800 bg-[#161b22] p-2 rounded-md ${
+                  className={`border border-emerald-500/25 bg-[#080d15]/85 p-3 rounded-2xl backdrop-blur-sm ${
                     index === 0 && project.images.length % 2 !== 0 ? 'md:col-span-2' : ''
                   }`}
                 >
-                  <div className="overflow-hidden bg-black rounded">
+                  <div className="overflow-hidden bg-slate-950 rounded-xl">
                     <img
                       src={image.src}
                       alt={image.alt}
-                      className="w-full h-auto object-cover"
+                      className="w-full h-auto object-cover hover:scale-[1.02] transition-transform duration-300"
                     />
                   </div>
-                  <p className="mt-2 text-center text-xs text-slate-400 py-1 font-medium">
+                  <p className="mt-3 text-center text-xs font-mono text-slate-400 py-1">
                     {image.alt}
                   </p>
                 </div>
@@ -141,53 +152,8 @@ function ProjectDetailPage() {
           </section>
         )}
 
-        {/* Links de Acesso */}
-        {(project.repoUrl || project.liveUrl) && (
-          <section className="pt-2 flex flex-wrap gap-4 border-t border-slate-800">
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 px-4 rounded text-sm transition-colors"
-              >
-                <span>Aceder ao Jogo Ao Vivo ({new URL(project.liveUrl).hostname})</span>
-                <span>&rarr;</span>
-              </a>
-            )}
-            {project.repoUrl && (
-              <a
-                href={project.repoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#21262d] hover:bg-slate-700 text-slate-200 border border-slate-700 py-2.5 px-4 rounded text-sm transition-colors"
-              >
-                <span>Ver Código no GitHub</span>
-                <span>&rarr;</span>
-              </a>
-            )}
-          </section>
-        )}
-
-        {/* Rodapé de Navegação */}
-        <div className="pt-6 border-t border-slate-800">
-          <Link
-            to="/"
-            className="text-sm font-medium text-blue-400 hover:underline"
-          >
-            &larr; Voltar à página principal
-          </Link>
-        </div>
-      </main>
-
-      {/* Footer */}
-      <footer className="border-t border-slate-800 bg-[#161b22] py-8 text-center text-xs text-slate-500">
-        <div className="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p>&copy; {new Date().getFullYear()} João Rafael Carvalho. Portfólio Pessoal.</p>
-          <p className="text-slate-600">Construído em React &amp; Tailwind CSS</p>
-        </div>
-      </footer>
-    </div>
+      </div>
+    </Layout>
   );
 }
 
