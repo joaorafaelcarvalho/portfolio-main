@@ -69,7 +69,7 @@ function SobrePage() {
             <div className="flex-1 space-y-5">
               {/* Frase em destaque conforme pedido, sem barra lateral verde */}
               <p className="text-xl sm:text-2xl font-bold text-white leading-relaxed">
-                Sou estudante de Informática e Multimédia da Escola Superior de Tecnologia na Universidade Politécnica de Castelo Branco (ESTCB / IPCB), estando atualmente no último ano da Licenciatura.
+                Sou estudante na Escola Superior de Tecnologia na Universidade Politécnica de Castelo Branco, estando atualmente no primeiro ano em Mestrado em Engenharia Informática - Área de Especialização em Desenvolvimento de Software e Sistemas Interativos.
               </p>
 
               <div className="space-y-4 text-base text-slate-300 leading-relaxed">
