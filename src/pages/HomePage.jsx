@@ -4,7 +4,9 @@ import projects from '../data/projects';
 import Layout from '../components/Layout';
 
 function HomePage() {
-  const featuredProjects = projects.slice(0, 4);
+  const featuredProjects = projects
+    .filter((project) => project.featured)
+    .sort((first, second) => first.featuredOrder - second.featuredOrder);
 
   return (
     <Layout>
@@ -45,9 +47,9 @@ function HomePage() {
                     className="block aspect-video w-full rounded-xl overflow-hidden bg-black/60 border border-emerald-500/20"
                   >
                     <img
-                      src={project.images[0].src}
-                      alt={project.images[0].alt}
-                      className="w-full h-full object-cover"
+                      src={project.coverImage?.src ?? project.images[0].src}
+                      alt={project.coverImage?.alt ?? project.images[0].alt ?? project.title}
+                      className={`w-full h-full ${project.coverImage?.fit === 'contain' ? 'object-contain p-2' : 'object-cover'}`}
                     />
                   </Link>
                 ) : (
@@ -57,10 +59,14 @@ function HomePage() {
                   </div>
                 )}
 
-                <div className="flex items-center justify-between text-xs text-slate-400 font-mono">
+                <div className="flex items-center justify-between gap-2 text-xs text-slate-400 font-mono">
                   <span className="text-emerald-400/90 font-medium">{project.category}</span>
-                  <span>{project.institution}</span>
+                  <span className="text-sm">{project.year ?? project.institution}</span>
                 </div>
+
+                {project.status && (
+                  <p className="text-sm text-amber-300/90 font-mono">{project.status}</p>
+                )}
 
                 <h2 className="text-xl font-bold text-white hover:text-emerald-400 transition-colors leading-snug">
                   <Link to={`/projeto/${project.id}`}>

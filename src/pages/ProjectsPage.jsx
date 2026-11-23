@@ -14,7 +14,12 @@ function ProjectsPage() {
 
   const techStack = [
     { name: "React.js", category: "Frontend" },
+    { name: "TypeScript", category: "Linguagem" },
     { name: "JavaScript", category: "Linguagem" },
+    { name: "Vite", category: "Frontend" },
+    { name: "Fastify", category: "Backend" },
+    { name: "WebSockets", category: "Comunicação" },
+    { name: "Vitest", category: "Testes" },
     { name: "C++", category: "Linguagem" },
     { name: "C#", category: "Linguagem" },
     { name: "Java", category: "Linguagem" },
@@ -84,9 +89,9 @@ function ProjectsPage() {
                     className="block aspect-video w-full rounded-xl overflow-hidden bg-black/60 border border-emerald-500/20 group-hover:border-emerald-500/50 transition-colors"
                   >
                     <img
-                      src={project.images[0].src}
-                      alt={project.images[0].alt}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      src={project.coverImage?.src ?? project.images[0].src}
+                      alt={project.coverImage?.alt ?? project.images[0].alt ?? project.title}
+                      className={`w-full h-full transition-transform duration-500 ${project.coverImage?.fit === 'contain' ? 'object-contain p-2' : 'object-cover group-hover:scale-105'}`}
                     />
                   </Link>
                 ) : (
@@ -98,10 +103,12 @@ function ProjectsPage() {
 
                 <div className="flex items-center justify-between text-xs text-slate-400 font-mono">
                   <span className="text-emerald-400/90 font-medium">{project.category}</span>
-                  {project.institution && (
-                    <span className="text-slate-300 font-semibold">{project.institution}</span>
-                  )}
+                  <span className="text-sm text-slate-300 font-semibold">{project.year ?? project.institution}</span>
                 </div>
+
+                {project.status && (
+                  <p className="text-sm text-amber-300/90 font-mono">{project.status}</p>
+                )}
 
                 <h2 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors leading-snug">
                   <Link to={`/projeto/${project.id}`}>
