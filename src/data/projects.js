@@ -10,7 +10,8 @@ const projects = [
     year: "2026",
     status: "Alpha · Em desenvolvimento",
     coverImage: {
-      src: "/souls/menu.png",
+      src: "/menu.png",
+      alt: "Menu principal do SOULS",
       fit: "cover"
     },
     description: [
@@ -45,12 +46,12 @@ const projects = [
       }
     ],
     images: [
-      { src: "/souls/menu.png" },
-      { src: "/souls/codice.png" },
-      { src: "/souls/deck-builder.png" },
-      { src: "/souls/regras.png" },
-      { src: "/souls/posicionamento.png" },
-      { src: "/souls/combate.png" }
+      { src: "/menu.png", alt: "Menu principal do SOULS" },
+      { src: "/codice.png", alt: "Códice das Almas — catálogo de cartas" },
+      { src: "/deck-builder.png", alt: "Construtor de baralhos" },
+      { src: "/regras.png", alt: "Código de batalha — regras do jogo" },
+      { src: "/posicionamento.png", alt: "Partida — fase de posicionamento" },
+      { src: "/combate.png", alt: "Partida — fase de combate" }
     ],
     repoUrl: "https://github.com/joaorafaelcarvalho/Souls",
     liveUrl: "https://souls-red.vercel.app/"
