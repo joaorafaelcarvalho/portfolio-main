@@ -10,8 +10,7 @@ const projects = [
     year: "2026",
     status: "Alpha · Em desenvolvimento",
     coverImage: {
-      src: "/souls-mobile-hand.png",
-      alt: "Partida de SOULS com a mão de cartas aberta",
+      src: "/souls/menu.png",
       fit: "cover"
     },
     description: [
@@ -46,9 +45,12 @@ const projects = [
       }
     ],
     images: [
-      { src: "/souls-mobile-closed.png", alt: "Ecrã inicial do SOULS em formato móvel", orientation: "portrait", fit: "contain" },
-      { src: "/souls-mobile-hand.png", alt: "Partida de SOULS com a mão de cartas aberta em formato móvel", orientation: "portrait", fit: "contain" },
-      { src: "/souls-mobile-card.png", alt: "Detalhe de carta do SOULS em formato móvel", orientation: "portrait", fit: "contain" }
+      { src: "/souls/menu.png" },
+      { src: "/souls/codice.png" },
+      { src: "/souls/deck-builder.png" },
+      { src: "/souls/regras.png" },
+      { src: "/souls/posicionamento.png" },
+      { src: "/souls/combate.png" }
     ],
     repoUrl: "https://github.com/joaorafaelcarvalho/Souls",
     liveUrl: "https://souls-red.vercel.app/"
