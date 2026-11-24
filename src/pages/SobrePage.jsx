@@ -37,8 +37,8 @@ function SobrePage() {
           
           <div className="flex items-center gap-3">
             <a
-              href="/curriculo.pdf"
-              download="Joao-Carvalho-CV.pdf"
+              href="/JoaoCarvalhoCV.pdf"
+              download="JoaoCarvalhoCV.pdf"
               className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-2.5 px-4 rounded-xl text-sm transition-colors"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
